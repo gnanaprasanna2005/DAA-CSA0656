@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+void stringCopy(char *source, char *destination) {
+    while (*source != '\0') {
+        *destination = *source;
+        source++;
+        destination++;
+    }
+    *destination = '\0'; 
+}
+
+int main() {
+	printf("192211817 GNANA PRASANNA\n");
+    char source[100], destination[100];
+
+    printf("Enter source string: ");
+    fgets(source, sizeof(source), stdin);
+    source[strcspn(source, "\n")] = '\0';
+
+    stringCopy(source, destination);
+
+    printf("Source string: %s\n", source);
+    printf("Copied string: %s\n", destination);
+
+    return 0;
+}
